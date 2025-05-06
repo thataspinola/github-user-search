@@ -23,7 +23,7 @@ Aplicação frontend para busca de usuários e repositórios do GitHub, constru�
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/thataspinola/github-user-search
 cd seu-repo
 ````
 
@@ -85,13 +85,13 @@ Os arquivos otimizados ficarão na pasta `dist/`.
 1. Crie o bucket:
 
 ```bash
-aws s3 mb s3://github-user-search-nomeunico --region sa-east-1
+aws s3 mb s3://github-user-search-thami --region sa-east-1
 ```
 
 2. Ative o modo de hospedagem:
 
 ```bash
-aws s3 website s3://github-user-search-nomeunico --index-document index.html --error-document index.html
+aws s3 website s3://github-user-search-thami --index-document index.html --error-document index.html
 ```
 
 3. Torne o bucket público (arquivo `public-policy.json`):
@@ -105,7 +105,7 @@ aws s3 website s3://github-user-search-nomeunico --index-document index.html --e
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::github-user-search-nomeunico/*"
+      "Resource": "arn:aws:s3:::github-user-search-thami/*"
     }
   ]
 }
@@ -113,7 +113,7 @@ aws s3 website s3://github-user-search-nomeunico --index-document index.html --e
 
 ```bash
 aws s3api put-bucket-policy \
-  --bucket github-user-search-nomeunico \
+  --bucket github-user-search-thami \
   --policy file://public-policy.json
 ```
 
@@ -121,13 +121,13 @@ aws s3api put-bucket-policy \
 
 ```bash
 npm run build
-aws s3 sync dist/ s3://github-user-search-nomeunico --delete
+aws s3 sync dist/ s3://github-user-search-thami --delete
 ```
 
 5. Acesse pela URL:
 
 ```
-http://github-user-search-nomeunico.s3-website-sa-east-1.amazonaws.com
+http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com
 ```
 
 ---
@@ -172,7 +172,7 @@ src/
 ## 🔗 Deploy
 
 Aplicação disponível em:
-➡️ [http://github-user-search-nomeunico.s3-website-sa-east-1.amazonaws.com](http://github-user-search-nomeunico.s3-website-sa-east-1.amazonaws.com)
+➡️ [http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com](http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com)
 
 ---
 
