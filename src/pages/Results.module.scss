@@ -1,0 +1,64 @@
+.resultsContainer {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+}
+
+.sortOptions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+
+  select {
+    padding: 5px;
+    border-radius: var(--border-radius);
+  }
+}
+
+.repoList {
+  list-style: none;
+  padding: 0;
+
+  li {
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #fefefe;
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    span {
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}
