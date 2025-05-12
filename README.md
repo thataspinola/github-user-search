@@ -85,13 +85,13 @@ Os arquivos otimizados ficarão na pasta `dist/`.
 1. Crie o bucket:
 
 ```bash
-aws s3 mb s3://github-user-search-thami --region sa-east-1
+aws s3 mb s3://github-user-search-thamis --region sa-east-1
 ```
 
 2. Ative o modo de hospedagem:
 
 ```bash
-aws s3 website s3://github-user-search-thami --index-document index.html --error-document index.html
+aws s3 website s3://github-user-search-thamis --index-document index.html --error-document index.html
 ```
 
 3. Torne o bucket público (arquivo `public-policy.json`):
@@ -105,7 +105,7 @@ aws s3 website s3://github-user-search-thami --index-document index.html --error
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::github-user-search-thami/*"
+      "Resource": "arn:aws:s3:::github-user-search-thamis/*"
     }
   ]
 }
@@ -113,7 +113,7 @@ aws s3 website s3://github-user-search-thami --index-document index.html --error
 
 ```bash
 aws s3api put-bucket-policy \
-  --bucket github-user-search-thami \
+  --bucket github-user-search-thamis \
   --policy file://public-policy.json
 ```
 
@@ -121,13 +121,13 @@ aws s3api put-bucket-policy \
 
 ```bash
 npm run build
-aws s3 sync dist/ s3://github-user-search-thami --delete
+aws s3 sync dist/ s3://github-user-search-thamis --delete
 ```
 
 5. Acesse pela URL:
 
 ```
-http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com
+http://github-user-search-thamis.s3-website-sa-east-1.amazonaws.com
 ```
 
 ---
@@ -172,7 +172,7 @@ src/
 ## 🔗 Deploy
 
 Aplicação disponível em:
-➡️ [http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com](http://github-user-search-thami.s3-website-sa-east-1.amazonaws.com)
+➡️ [http://github-user-search-thamis.s3-website-sa-east-1.amazonaws.com](http://github-user-search-thamis.s3-website-sa-east-1.amazonaws.com)
 
 ---
 
